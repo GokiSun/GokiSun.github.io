@@ -1,0 +1,130 @@
+#container{
+	position: relative;
+	width: 300px;
+	height: 100px;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+@keyframes move{
+	0%{
+		left: -10px;
+	}
+	50%{
+		left: 270px;
+	}
+	100%{
+		left: -10px;
+	}
+}
+.item{
+	position: absolute;
+	width: 40px;
+	height: 25px;
+	border-radius: 5px;
+	bottom: 0;
+}
+.pink{
+	left: 20px;
+	background: pink;
+	animation:move 4s infinite;
+}
+.gray{
+	left: 100px;
+	background: gray;
+}
+.green{
+	left: 160px;
+	background: green;
+}
+.yellow{
+	left: 220px;
+	background: yellow;
+}
+@keyframes jumpgo{
+	0%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;transform: rotate(0deg);}
+	14%{width: 45px;height: 20px;bottom: 0px;margin-left: -2.5px;transform: rotate(0deg);}
+	28%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	42%{width: 50px;height: 17px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	56%{width: 35px;height: 28px;bottom: 0px;margin-left: -57.5px;}
+	70%{width: 43px;height: 23px;bottom: 0px;margin-left: -61.5px;}
+	84%{width: 39px;height: 26px;bottom: 0px;margin-left: -59.5px;}
+	100%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;transform: rotate(-180deg);}
+}
+@keyframes jumpback{
+	0%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;transform: rotate(-180deg);}
+	14%{width: 45px;height: 20px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	28%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	42%{width: 50px;height: 17px;bottom: 0px;margin-left: -5px;transform: rotate(0deg);}
+	56%{width: 35px;height: 28px;bottom: 0px;margin-left: 2.5px;}
+	70%{width: 43px;height: 23px;bottom: 0px;margin-left: -1.5px;}
+	84%{width: 39px;height: 26px;bottom: 0px;margin-left: -0.5px;}
+	100%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;transform: rotate(0deg);}
+}
+.jumpgo{
+	animation:jumpgo 1s ease;
+	animation-fill-mode: forwards;
+}
+.jumpback{
+	animation:jumpback 1s ease;
+	animation-fill-mode: forwards;
+}
+/* 纯css动画效果 */
+/* @keyframes jump1{
+	5%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+	8%{width: 45px;height: 20px;bottom: 0px;margin-left: -2.5px;transform: rotate(0deg);}
+	10%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	13%{width: 50px;height: 17px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	15%{width: 35px;height: 28px;bottom: 0px;margin-left: -57.5px;}
+	17%{width: 43px;height: 23px;bottom: 0px;margin-left: -61.5px;}
+	20%{width: 39px;height: 26px;bottom: 0px;margin-left: -59.5px;}
+	23%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+
+	67%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+	70%{width: 45px;height: 20px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	73%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	75%{width: 50px;height: 17px;bottom: 0px;margin-left: -5px;transform: rotate(0deg);}
+	77%{width: 35px;height: 28px;bottom: 0px;margin-left: 2.5px;}
+	80%{width: 43px;height: 23px;bottom: 0px;margin-left: -1.5px;}
+	83%{width: 39px;height: 26px;bottom: 0px;margin-left: -0.5px;}
+	85%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+}
+@keyframes jump2{
+	10%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+	13%{width: 45px;height: 20px;bottom: 0px;margin-left: -2.5px;transform: rotate(0deg);}
+	15%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	17%{width: 50px;height: 17px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	20%{width: 35px;height: 28px;bottom: 0px;margin-left: -57.5px;}
+	23%{width: 43px;height: 23px;bottom: 0px;margin-left: -61.5px;}
+	25%{width: 39px;height: 26px;bottom: 0px;margin-left: -59.5px;}
+	27%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+
+	63%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+	65%{width: 45px;height: 20px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	67%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	70%{width: 50px;height: 17px;bottom: 0px;margin-left: -5px;transform: rotate(0deg);}
+	73%{width: 35px;height: 28px;bottom: 0px;margin-left: 2.5px;}
+	75%{width: 43px;height: 23px;bottom: 0px;margin-left: -1.5px;}
+	77%{width: 39px;height: 26px;bottom: 0px;margin-left: -0.5px;}
+	80%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+}
+@keyframes jump3{
+	15%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+	17%{width: 45px;height: 20px;bottom: 0px;margin-left: -2.5px;transform: rotate(0deg);}
+	20%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	23%{width: 50px;height: 17px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	25%{width: 35px;height: 28px;bottom: 0px;margin-left: -57.5px;}
+	27%{width: 43px;height: 23px;bottom: 0px;margin-left: -61.5px;}
+	30%{width: 39px;height: 26px;bottom: 0px;margin-left: -59.5px;}
+	33%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+
+	57%{width: 40px;height: 25px;bottom: 0px;margin-left: -60px;}
+	60%{width: 45px;height: 20px;bottom: 0px;margin-left: -62.5px;transform: rotate(-180deg);}
+	63%{width: 40px;height: 25px;bottom: 50px;margin-left: -30px;}
+	65%{width: 50px;height: 17px;bottom: 0px;margin-left: -5px;transform: rotate(0deg);}
+	67%{width: 35px;height: 28px;bottom: 0px;margin-left: 2.5px;}
+	70%{width: 43px;height: 23px;bottom: 0px;margin-left: -1.5px;}
+	73%{width: 39px;height: 26px;bottom: 0px;margin-left: -0.5px;}
+	75%{width: 40px;height: 25px;bottom: 0px;margin-left: 0px;}
+} */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="container">
+        <div class="item pink"></div>
+        <div class="item jump gray"></div>
+        <div class="item jump green"></div>
+        <div class="item jump yellow"></div>
+    </div>
+</body>
+<script type="text/javascript">
+	var move = document.getElementsByClassName('pink')[0];
+	var jump = document.getElementsByClassName('jump');
+	var nowPosition;
+	var lastPosition = -99999;
+	setInterval(function () {
+		nowPosition = move.offsetLeft;
+		if(nowPosition >= lastPosition){
+			for (let i = 0; i < jump.length; i++) {
+				if(move.getAttribute('class').indexOf('jumpback') < 0){
+					if(jump[i].offsetLeft - nowPosition <= 100 && jump[i].offsetLeft - nowPosition >= 50){
+						jump[i].classList.remove('jumpback');
+						jump[i].classList.add('jumpgo');
+					}
+				}
+			}
+		}else {
+			for (let i = 0; i < jump.length; i++) {
+				if(move.getAttribute('class').indexOf('jumpgo') < 0){
+					if(nowPosition - jump[i].offsetLeft <= 100 && nowPosition - jump[i].offsetLeft >= 50){
+						jump[i].classList.remove('jumpgo');
+						jump[i].classList.add('jumpback');
+					}
+				}
+			}
+		}
+		lastPosition = nowPosition;
+	}, 50)
+</script>
+</html>
